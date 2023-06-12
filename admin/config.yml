@@ -27,8 +27,7 @@ collections:
         widget: hidden
         name: layout
         default: '{{slug}}.html'
-      - &ref_0
-        label: Seo
+      - label: Seo
         name: seo
         widget: object
         collapsed: true
@@ -79,1419 +78,6 @@ collections:
             name: additional_tags
             widget: text
             required: false
-  - name: products
-    label: Our Products
-    folder: cms/products
-    create: true
-    identifier_field: name
-    extension: md
-    slug: '{{slug}}'
-    fields:
-      - hint: ''
-        name: title
-        label: Name
-        widget: string
-        required: true
-      - hint: ''
-        name: created-on
-        label: Created On
-        widget: datetime
-        required: false
-      - hint: ''
-        name: updated-on
-        label: Updated On
-        widget: datetime
-        required: false
-      - hint: ''
-        name: published-on
-        label: Published On
-        widget: datetime
-        required: false
-      - label: Details
-        name: body
-        widget: markdown
-        required: false
-      - hint: ''
-        name: f_price
-        label: Price
-        widget: string
-        required: false
-      - hint: ''
-        name: f_image-main
-        label: Large Image
-        widget: object
-        required: true
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: true
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - hint: ''
-        name: f_image-thumb
-        label: Small Image
-        widget: object
-        required: true
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: true
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - hint: ''
-        name: f_image-gallery
-        label: Image Gallery
-        widget: list
-        required: false
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: false
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - hint: ''
-        name: f_overview
-        label: Description
-        widget: string
-        required: true
-      - hint: ''
-        name: f_booking-link
-        label: Booking Link
-        widget: string
-        required: false
-      - hint: ''
-        name: f_ensuite-amenities
-        label: Ensuite Amenities
-        widget: relation
-        required: false
-        collection: room_amenities
-        value_field: cms/room-amenities/{{slug}}.md
-        search_fields:
-          - slug
-          - name
-        display_fields:
-          - title
-        multiple: true
-      - hint: ''
-        name: f_sort-order
-        label: Sort Order
-        widget: number
-        required: false
-      - label: Tags
-        widget: hidden
-        name: tags
-        default: products
-      - label: Layout
-        widget: hidden
-        name: layout
-        default: '[products].html'
-      - label: Publish Date
-        name: date
-        widget: datetime
-      - *ref_0
-  - name: room_amenities
-    label: Hotel Room Amenities
-    folder: cms/room-amenities
-    create: true
-    identifier_field: name
-    extension: md
-    slug: '{{slug}}'
-    fields:
-      - hint: ''
-        name: title
-        label: Title
-        widget: string
-        required: true
-      - hint: ''
-        name: created-on
-        label: Created On
-        widget: datetime
-        required: false
-      - hint: ''
-        name: updated-on
-        label: Updated On
-        widget: datetime
-        required: false
-      - hint: ''
-        name: published-on
-        label: Published On
-        widget: datetime
-        required: false
-      - label: Details
-        name: body
-        widget: markdown
-        required: false
-      - hint: ''
-        name: f_image
-        label: Icon
-        widget: object
-        required: false
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: false
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - hint: ''
-        name: f_description-2
-        label: Description
-        widget: string
-        required: false
-      - label: Tags
-        widget: hidden
-        name: tags
-        default: room-amenities
-      - label: Layout
-        widget: hidden
-        name: layout
-        default: '[room-amenities].html'
-      - label: Publish Date
-        name: date
-        widget: datetime
-      - *ref_0
-  - name: hotel_amenities
-    label: Hotel Amenities
-    folder: cms/hotel-amenities
-    create: true
-    identifier_field: name
-    extension: md
-    slug: '{{slug}}'
-    fields:
-      - hint: ''
-        name: title
-        label: Name
-        widget: string
-        required: true
-      - hint: ''
-        name: created-on
-        label: Created On
-        widget: datetime
-        required: false
-      - hint: ''
-        name: updated-on
-        label: Updated On
-        widget: datetime
-        required: false
-      - hint: ''
-        name: published-on
-        label: Published On
-        widget: datetime
-        required: false
-      - label: Details
-        name: body
-        widget: markdown
-        required: false
-      - hint: ''
-        name: f_headline
-        label: Headline
-        widget: string
-        required: true
-      - hint: ''
-        name: f_subhead
-        label: Subhead
-        widget: string
-        required: false
-      - hint: ''
-        name: f_large-image
-        label: Large Image
-        widget: object
-        required: true
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: true
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - hint: ''
-        name: f_small-image
-        label: Small Image
-        widget: object
-        required: true
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: true
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - hint: ''
-        name: f_image-gallery
-        label: Image Gallery
-        widget: list
-        required: false
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: false
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - hint: ''
-        name: f_layouts
-        label: Layouts
-        widget: select
-        required: false
-        options:
-          - label: Layout (Restaurant)
-            value: Layout (Restaurant)
-      - label: Tags
-        widget: hidden
-        name: tags
-        default: hotel-amenities
-      - label: Layout
-        widget: hidden
-        name: layout
-        default: '[hotel-amenities].html'
-      - label: Publish Date
-        name: date
-        widget: datetime
-      - *ref_0
-  - name: services
-    label: Hotel Services
-    folder: cms/services
-    create: true
-    identifier_field: name
-    extension: md
-    slug: '{{slug}}'
-    fields:
-      - hint: ''
-        name: title
-        label: Name
-        widget: string
-        required: true
-      - hint: ''
-        name: created-on
-        label: Created On
-        widget: datetime
-        required: false
-      - hint: ''
-        name: updated-on
-        label: Updated On
-        widget: datetime
-        required: false
-      - hint: ''
-        name: published-on
-        label: Published On
-        widget: datetime
-        required: false
-      - label: Details
-        name: body
-        widget: markdown
-        required: false
-      - hint: ''
-        name: f_description
-        label: Description
-        widget: string
-        required: false
-      - hint: ''
-        name: f_small-image
-        label: Icon
-        widget: object
-        required: false
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: false
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - label: Tags
-        widget: hidden
-        name: tags
-        default: services
-      - label: Layout
-        widget: hidden
-        name: layout
-        default: '[services].html'
-      - label: Publish Date
-        name: date
-        widget: datetime
-      - *ref_0
-  - name: menu
-    label: Menus
-    folder: cms/menu
-    create: true
-    identifier_field: name
-    extension: md
-    slug: '{{slug}}'
-    fields:
-      - hint: ''
-        name: title
-        label: Name
-        widget: string
-        required: true
-      - hint: ''
-        name: created-on
-        label: Created On
-        widget: datetime
-        required: false
-      - hint: ''
-        name: updated-on
-        label: Updated On
-        widget: datetime
-        required: false
-      - hint: ''
-        name: published-on
-        label: Published On
-        widget: datetime
-        required: false
-      - hint: ''
-        name: f_menu
-        label: Layout
-        widget: select
-        required: true
-        options:
-          - label: Menu (Breakfast)
-            value: Menu (Breakfast)
-          - label: Menu (Lunch)
-            value: Menu (Lunch)
-          - label: Menu (Dinner)
-            value: Menu (Dinner)
-          - label: Menu (Cocktails)
-            value: Menu (Cocktails)
-      - hint: ''
-        name: f_description-2
-        label: Description
-        widget: string
-        required: true
-      - hint: ''
-        name: f_image-main
-        label: Large Image
-        widget: object
-        required: false
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: false
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - hint: ''
-        name: f_image-thumb
-        label: Small Image
-        widget: object
-        required: true
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: true
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - hint: ''
-        name: f_image-gallery
-        label: Image Gallery
-        widget: list
-        required: false
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: false
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - hint: ''
-        name: f_sort-order
-        label: Sort Order
-        widget: number
-        required: false
-      - label: Tags
-        widget: hidden
-        name: tags
-        default: menu
-      - label: Layout
-        widget: hidden
-        name: layout
-        default: '[menu].html'
-      - label: Publish Date
-        name: date
-        widget: datetime
-      - *ref_0
-  - name: food
-    label: Food
-    folder: cms/food
-    create: true
-    identifier_field: name
-    extension: md
-    slug: '{{slug}}'
-    fields:
-      - hint: ''
-        name: title
-        label: Name
-        widget: string
-        required: true
-      - hint: ''
-        name: created-on
-        label: Created On
-        widget: datetime
-        required: false
-      - hint: ''
-        name: updated-on
-        label: Updated On
-        widget: datetime
-        required: false
-      - hint: ''
-        name: published-on
-        label: Published On
-        widget: datetime
-        required: false
-      - label: Details
-        name: body
-        widget: markdown
-        required: false
-      - hint: ''
-        name: f_short-description
-        label: Description
-        widget: string
-        required: false
-      - hint: ''
-        name: f_price
-        label: Price
-        widget: string
-        required: false
-      - hint: ''
-        name: f_menu
-        label: Menu
-        widget: relation
-        required: true
-        collection: menu
-        value_field: cms/menu/{{slug}}.md
-        search_fields:
-          - slug
-          - name
-        display_fields:
-          - title
-        multiple: true
-      - hint: ''
-        name: f_category-2
-        label: Category
-        widget: relation
-        required: true
-        collection: food_category
-        value_field: cms/food-category/{{slug}}.md
-        search_fields:
-          - slug
-          - name
-        display_fields:
-          - title
-        multiple: true
-      - hint: ''
-        name: f_main-image
-        label: Large Image
-        widget: object
-        required: false
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: false
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - hint: ''
-        name: f_thumbnail
-        label: Small Image
-        widget: object
-        required: false
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: false
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - label: Tags
-        widget: hidden
-        name: tags
-        default: food
-      - label: Layout
-        widget: hidden
-        name: layout
-        default: '[food].html'
-      - label: Publish Date
-        name: date
-        widget: datetime
-      - *ref_0
-  - name: food_category
-    label: Food Categories
-    folder: cms/food-category
-    create: true
-    identifier_field: name
-    extension: md
-    slug: '{{slug}}'
-    fields:
-      - hint: ''
-        name: title
-        label: Name
-        widget: string
-        required: true
-      - hint: ''
-        name: created-on
-        label: Created On
-        widget: datetime
-        required: false
-      - hint: ''
-        name: updated-on
-        label: Updated On
-        widget: datetime
-        required: false
-      - hint: ''
-        name: published-on
-        label: Published On
-        widget: datetime
-        required: false
-      - label: Tags
-        widget: hidden
-        name: tags
-        default: food-category
-      - label: Layout
-        widget: hidden
-        name: layout
-        default: '[food-category].html'
-      - label: Publish Date
-        name: date
-        widget: datetime
-      - *ref_0
-  - name: drinks
-    label: Drinks
-    folder: cms/drinks
-    create: true
-    identifier_field: name
-    extension: md
-    slug: '{{slug}}'
-    fields:
-      - hint: ''
-        name: title
-        label: Name
-        widget: string
-        required: true
-      - hint: ''
-        name: created-on
-        label: Created On
-        widget: datetime
-        required: false
-      - hint: ''
-        name: updated-on
-        label: Updated On
-        widget: datetime
-        required: false
-      - hint: ''
-        name: published-on
-        label: Published On
-        widget: datetime
-        required: false
-      - label: Details
-        name: body
-        widget: markdown
-        required: false
-      - hint: ''
-        name: f_description
-        label: Description
-        widget: string
-        required: false
-      - hint: ''
-        name: f_price
-        label: Price
-        widget: string
-        required: false
-      - hint: ''
-        name: f_menu-2
-        label: Menu
-        widget: relation
-        required: true
-        collection: menu
-        value_field: cms/menu/{{slug}}.md
-        search_fields:
-          - slug
-          - name
-        display_fields:
-          - title
-        multiple: false
-      - hint: ''
-        name: f_drink-category
-        label: Drink Category
-        widget: relation
-        required: true
-        collection: drink_categories
-        value_field: cms/drink-categories/{{slug}}.md
-        search_fields:
-          - slug
-          - name
-        display_fields:
-          - title
-        multiple: false
-      - hint: ''
-        name: f_large-image
-        label: Large Image
-        widget: object
-        required: false
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: false
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - hint: ''
-        name: f_small-image
-        label: Small Image
-        widget: object
-        required: false
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: false
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - label: Tags
-        widget: hidden
-        name: tags
-        default: drinks
-      - label: Layout
-        widget: hidden
-        name: layout
-        default: '[drinks].html'
-      - label: Publish Date
-        name: date
-        widget: datetime
-      - *ref_0
-  - name: drink_categories
-    label: Drink Categories
-    folder: cms/drink-categories
-    create: true
-    identifier_field: name
-    extension: md
-    slug: '{{slug}}'
-    fields:
-      - hint: ''
-        name: title
-        label: Name
-        widget: string
-        required: true
-      - hint: ''
-        name: created-on
-        label: Created On
-        widget: datetime
-        required: false
-      - hint: ''
-        name: updated-on
-        label: Updated On
-        widget: datetime
-        required: false
-      - hint: ''
-        name: published-on
-        label: Published On
-        widget: datetime
-        required: false
-      - label: Tags
-        widget: hidden
-        name: tags
-        default: drink-categories
-      - label: Layout
-        widget: hidden
-        name: layout
-        default: '[drink-categories].html'
-      - label: Publish Date
-        name: date
-        widget: datetime
-      - *ref_0
-  - name: experiences
-    label: Experiences
-    folder: cms/experiences
-    create: true
-    identifier_field: name
-    extension: md
-    slug: '{{slug}}'
-    fields:
-      - hint: ''
-        name: title
-        label: Title
-        widget: string
-        required: true
-      - hint: ''
-        name: created-on
-        label: Created On
-        widget: datetime
-        required: false
-      - hint: ''
-        name: updated-on
-        label: Updated On
-        widget: datetime
-        required: false
-      - hint: ''
-        name: published-on
-        label: Published On
-        widget: datetime
-        required: false
-      - label: Details
-        name: body
-        widget: markdown
-        required: false
-      - hint: ''
-        name: f_image-main
-        label: Large Image
-        widget: object
-        required: true
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: true
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - hint: ''
-        name: f_image-thumb
-        label: Small Image
-        widget: object
-        required: true
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: true
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - hint: ''
-        name: f_image-gallery
-        label: Image Gallery
-        widget: list
-        required: false
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: false
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - hint: ''
-        name: f_description-2
-        label: Description
-        widget: string
-        required: true
-      - hint: ''
-        name: f_booking-link
-        label: Booking Link
-        widget: string
-        required: true
-      - hint: ''
-        name: f_price
-        label: Price
-        widget: string
-        required: false
-      - hint: ''
-        name: f_featured
-        label: Featured
-        widget: boolean
-        required: false
-      - label: Tags
-        widget: hidden
-        name: tags
-        default: experiences
-      - label: Layout
-        widget: hidden
-        name: layout
-        default: '[experiences].html'
-      - label: Publish Date
-        name: date
-        widget: datetime
-      - *ref_0
-  - name: events
-    label: Events
-    folder: cms/events
-    create: true
-    identifier_field: name
-    extension: md
-    slug: '{{slug}}'
-    fields:
-      - hint: ''
-        name: title
-        label: Title
-        widget: string
-        required: true
-      - hint: ''
-        name: created-on
-        label: Created On
-        widget: datetime
-        required: false
-      - hint: ''
-        name: updated-on
-        label: Updated On
-        widget: datetime
-        required: false
-      - hint: ''
-        name: published-on
-        label: Published On
-        widget: datetime
-        required: false
-      - label: Details
-        name: body
-        widget: markdown
-        required: false
-      - hint: ''
-        name: f_description
-        label: Description
-        widget: string
-        required: true
-      - hint: ''
-        name: f_event-date
-        label: When
-        widget: datetime
-        required: true
-      - hint: ''
-        name: f_where
-        label: Where
-        widget: string
-        required: true
-      - hint: ''
-        name: f_map-link
-        label: Map Link
-        widget: string
-        required: false
-      - hint: ''
-        name: f_ticket-needed
-        label: Ticket Needed?
-        widget: boolean
-        required: false
-      - hint: ''
-        name: f_price
-        label: Price
-        widget: string
-        required: false
-      - hint: ''
-        name: f_purchase-link
-        label: Purchase Link
-        widget: string
-        required: false
-      - hint: ''
-        name: f_small-image
-        label: Small Image
-        widget: object
-        required: true
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: true
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - hint: ''
-        name: f_large-image
-        label: Large Image
-        widget: object
-        required: false
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: false
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - hint: ''
-        name: f_category
-        label: Category
-        widget: relation
-        required: false
-        collection: event_categories
-        value_field: cms/event-categories/{{slug}}.md
-        search_fields:
-          - slug
-          - name
-        display_fields:
-          - title
-        multiple: false
-      - label: Tags
-        widget: hidden
-        name: tags
-        default: events
-      - label: Layout
-        widget: hidden
-        name: layout
-        default: '[events].html'
-      - label: Publish Date
-        name: date
-        widget: datetime
-      - *ref_0
-  - name: event_categories
-    label: Event Categories
-    folder: cms/event-categories
-    create: true
-    identifier_field: name
-    extension: md
-    slug: '{{slug}}'
-    fields:
-      - hint: ''
-        name: title
-        label: Name
-        widget: string
-        required: true
-      - hint: ''
-        name: created-on
-        label: Created On
-        widget: datetime
-        required: false
-      - hint: ''
-        name: updated-on
-        label: Updated On
-        widget: datetime
-        required: false
-      - hint: ''
-        name: published-on
-        label: Published On
-        widget: datetime
-        required: false
-      - label: Tags
-        widget: hidden
-        name: tags
-        default: event-categories
-      - label: Layout
-        widget: hidden
-        name: layout
-        default: '[event-categories].html'
-      - label: Publish Date
-        name: date
-        widget: datetime
-      - *ref_0
-  - name: articles
-    label: Articles
-    folder: cms/articles
-    create: true
-    identifier_field: name
-    extension: md
-    slug: '{{slug}}'
-    fields:
-      - hint: ''
-        name: title
-        label: Title
-        widget: string
-        required: true
-      - hint: ''
-        name: created-on
-        label: Created On
-        widget: datetime
-        required: false
-      - hint: ''
-        name: updated-on
-        label: Updated On
-        widget: datetime
-        required: false
-      - hint: ''
-        name: published-on
-        label: Published On
-        widget: datetime
-        required: false
-      - label: Body
-        name: body
-        widget: markdown
-        required: false
-      - hint: ''
-        name: f_category
-        label: Category
-        widget: relation
-        required: false
-        collection: article_categories
-        value_field: cms/article-categories/{{slug}}.md
-        search_fields:
-          - slug
-          - name
-        display_fields:
-          - title
-        multiple: false
-      - hint: ''
-        name: f_summary
-        label: Intro
-        widget: string
-        required: true
-      - hint: ''
-        name: f_large-image
-        label: Large Image
-        widget: object
-        required: false
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: false
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - hint: ''
-        name: f_small-image
-        label: Small Image
-        widget: object
-        required: false
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: false
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - hint: ''
-        name: f_image-caption
-        label: Image Caption
-        widget: string
-        required: false
-      - hint: ''
-        name: f_image-caption-link
-        label: Image Caption Link
-        widget: string
-        required: false
-      - label: Tags
-        widget: hidden
-        name: tags
-        default: articles
-      - label: Layout
-        widget: hidden
-        name: layout
-        default: '[articles].html'
-      - label: Publish Date
-        name: date
-        widget: datetime
-      - *ref_0
-  - name: article_categories
-    label: Article Categories
-    folder: cms/article-categories
-    create: true
-    identifier_field: name
-    extension: md
-    slug: '{{slug}}'
-    fields:
-      - hint: ''
-        name: title
-        label: Name
-        widget: string
-        required: true
-      - hint: ''
-        name: created-on
-        label: Created On
-        widget: datetime
-        required: false
-      - hint: ''
-        name: updated-on
-        label: Updated On
-        widget: datetime
-        required: false
-      - hint: ''
-        name: published-on
-        label: Published On
-        widget: datetime
-        required: false
-      - label: Tags
-        widget: hidden
-        name: tags
-        default: article-categories
-      - label: Layout
-        widget: hidden
-        name: layout
-        default: '[article-categories].html'
-      - label: Publish Date
-        name: date
-        widget: datetime
-      - *ref_0
-  - name: team_members
-    label: Team Members
-    folder: cms/team-members
-    create: true
-    identifier_field: name
-    extension: md
-    slug: '{{slug}}'
-    fields:
-      - hint: ''
-        name: title
-        label: Name
-        widget: string
-        required: true
-      - hint: ''
-        name: created-on
-        label: Created On
-        widget: datetime
-        required: false
-      - hint: ''
-        name: updated-on
-        label: Updated On
-        widget: datetime
-        required: false
-      - hint: ''
-        name: published-on
-        label: Published On
-        widget: datetime
-        required: false
-      - label: Bio
-        name: body
-        widget: markdown
-        required: false
-      - hint: ''
-        name: f_job-title
-        label: Job Title
-        widget: string
-        required: true
-      - hint: ''
-        name: f_large-image
-        label: Large Image
-        widget: object
-        required: false
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: false
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - hint: ''
-        name: f_small-image
-        label: Small Image
-        widget: object
-        required: true
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: true
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - hint: ''
-        name: f_social-media-link
-        label: Social Media Link
-        widget: string
-        required: false
-      - label: Tags
-        widget: hidden
-        name: tags
-        default: team-members
-      - label: Layout
-        widget: hidden
-        name: layout
-        default: '[team-members].html'
-      - label: Publish Date
-        name: date
-        widget: datetime
-      - *ref_0
-  - name: faq
-    label: FAQs
-    folder: cms/faq
-    create: true
-    identifier_field: name
-    extension: md
-    slug: '{{slug}}'
-    fields:
-      - hint: ''
-        name: title
-        label: Question
-        widget: string
-        required: true
-      - hint: ''
-        name: created-on
-        label: Created On
-        widget: datetime
-        required: false
-      - hint: ''
-        name: updated-on
-        label: Updated On
-        widget: datetime
-        required: false
-      - hint: ''
-        name: published-on
-        label: Published On
-        widget: datetime
-        required: false
-      - label: Answer
-        name: body
-        widget: markdown
-        required: false
-      - hint: ''
-        name: f_category
-        label: Category
-        widget: relation
-        required: true
-        collection: faq_categories
-        value_field: cms/faq-categories/{{slug}}.md
-        search_fields:
-          - slug
-          - name
-        display_fields:
-          - title
-        multiple: true
-      - hint: ''
-        name: f_sort-order
-        label: Sort Order
-        widget: number
-        required: false
-      - label: Tags
-        widget: hidden
-        name: tags
-        default: faq
-      - label: Layout
-        widget: hidden
-        name: layout
-        default: '[faq].html'
-      - label: Publish Date
-        name: date
-        widget: datetime
-      - *ref_0
-  - name: faq_categories
-    label: FAQ Categories
-    folder: cms/faq-categories
-    create: true
-    identifier_field: name
-    extension: md
-    slug: '{{slug}}'
-    fields:
-      - hint: ''
-        name: title
-        label: Name
-        widget: string
-        required: true
-      - hint: ''
-        name: created-on
-        label: Created On
-        widget: datetime
-        required: false
-      - hint: ''
-        name: updated-on
-        label: Updated On
-        widget: datetime
-        required: false
-      - hint: ''
-        name: published-on
-        label: Published On
-        widget: datetime
-        required: false
-      - label: Tags
-        widget: hidden
-        name: tags
-        default: faq-categories
-      - label: Layout
-        widget: hidden
-        name: layout
-        default: '[faq-categories].html'
-      - label: Publish Date
-        name: date
-        widget: datetime
-      - *ref_0
   - label: Theme Settings
     name: settings
     identifier_field: title
@@ -1693,14 +279,30 @@ collections:
             label: Text
             name: 2832a5
             widget: string
+          - hint: >-
+              Original text: Whether you're looking for a classic whiskey or an
+              artisanal gin, we have you covered with our extensive spirits
+              selection., key: -37177dea
+            label: Text
+            name: '-37177dea'
+            widget: text
           - hint: 'Original text: View details, key: 4d42a7e7'
             label: Text
             name: 4d42a7e7
             widget: string
-          - hint: 'Original text: No items found., key: 3d503d2b'
+          - hint: >-
+              Original text: Enjoy the best of local and international breweries
+              with our wide range of craft and mainstream beers., key: 7715b1fb
             label: Text
-            name: 3d503d2b
-            widget: string
+            name: 7715b1fb
+            widget: text
+          - hint: >-
+              Original text: From crisp whites to robust reds, our collection of
+              wines is extensive and diverse, catering to all palates., key:
+              cb05c11
+            label: Text
+            name: cb05c11
+            widget: text
           - hint: 'Original text: Our Mission, key: 3dba0078'
             label: Text
             name: 3dba0078
@@ -1820,137 +422,13 @@ collections:
             label: Text
             name: 7ec719f4
             widget: string
-          - hint: 'Original text: Keep Reading, key: -220bd30f'
-            label: Text
-            name: '-220bd30f'
-            widget: string
-          - hint: 'Original text: You may also like, key: b675cf4'
-            label: Text
-            name: b675cf4
-            widget: string
-          - hint: 'Original text: Explore our menu, key: -1ac69b40'
-            label: Text
-            name: '-1ac69b40'
-            widget: string
-          - hint: 'Original text: find out more, key: 1f58276e'
-            label: Text
-            name: 1f58276e
-            widget: string
-          - hint: 'Original text: Explore Our Restaurant, key: 717e761e'
-            label: Text
-            name: 717e761e
-            widget: string
-          - hint: 'Original text: View Directions, key: -5e440ed1'
-            label: Text
-            name: '-5e440ed1'
-            widget: string
-          - hint: 'Original text: Get tickets, key: -774bec03'
-            label: Text
-            name: '-774bec03'
-            widget: string
-          - hint: 'Original text: More Events, key: -2fd9d7bc'
-            label: Text
-            name: '-2fd9d7bc'
-            widget: string
-          - hint: 'Original text: View Image Gallery, key: -112ee0ce'
-            label: Text
-            name: '-112ee0ce'
-            widget: string
-          - hint: 'Original text: Book this Experience, key: -268a36cb'
-            label: Text
-            name: '-268a36cb'
-            widget: string
-          - hint: 'Original text: keep exploring, key: 4b9b2bb5'
-            label: Text
-            name: 4b9b2bb5
-            widget: string
-          - hint: 'Original text: Upcoming Events, key: 6b492c9d'
-            label: Text
-            name: 6b492c9d
-            widget: string
-          - hint: 'Original text: frequently asked question, key: 60c47413'
-            label: Text
-            name: 60c47413
-            widget: string
-          - hint: 'Original text: Related Questions, key: 2ec06758'
-            label: Text
-            name: 2ec06758
-            widget: string
-          - hint: 'Original text: questions, key: -6a3abeb3'
-            label: Text
-            name: '-6a3abeb3'
-            widget: string
-          - hint: 'Original text: Explore Our MENUS, key: 37935b73'
-            label: Text
-            name: 37935b73
-            widget: string
-          - hint: 'Original text: Frequently Asked Questions, key: -475b7d60'
-            label: Text
-            name: '-475b7d60'
-            widget: string
-          - hint: 'Original text: need more help?, key: 1b058a5d'
-            label: Text
-            name: 1b058a5d
-            widget: string
-          - hint: 'Original text: Contact Front Desk, key: 5aacee90'
-            label: Text
-            name: 5aacee90
-            widget: string
-          - hint: 'Original text: Sweet stuff, key: -7b66fb5c'
-            label: Text
-            name: '-7b66fb5c'
-            widget: string
-          - hint: 'Original text: Salt ''n'' Savory, key: 5f668058'
-            label: Text
-            name: 5f668058
-            widget: string
-          - hint: 'Original text: extras, key: -4cd5119d'
-            label: Text
-            name: '-4cd5119d'
-            widget: string
-          - hint: 'Original text: Starters, key: 525735e4'
-            label: Text
-            name: '525735e4'
-            widget: string
-          - hint: 'Original text: healthy bowls, key: 777348e'
-            label: Text
-            name: 777348e
-            widget: string
-          - hint: 'Original text: Sandwiches, key: 7f751349'
-            label: Text
-            name: 7f751349
-            widget: string
-          - hint: 'Original text: Extras, key: 7c8fda83'
-            label: Text
-            name: 7c8fda83
-            widget: string
-          - hint: 'Original text: Salads, key: -6cd44bce'
-            label: Text
-            name: '-6cd44bce'
-            widget: string
-          - hint: 'Original text: Entrées, key: 45cfcf0'
-            label: Text
-            name: 45cfcf0
-            widget: string
-          - hint: 'Original text: Desserts, key: 4166ce2d'
-            label: Text
-            name: 4166ce2d
-            widget: string
-          - hint: 'Original text: cocktails, key: -6cb6d331'
-            label: Text
-            name: '-6cb6d331'
-            widget: string
-          - hint: 'Original text: In your room, key: -3a2ffc73'
-            label: Text
-            name: '-3a2ffc73'
-            widget: string
-          - hint: 'Original text: Explore other Products, key: -607b561f'
-            label: Text
-            name: '-607b561f'
-            widget: string
           - hint: 'Original text: Search Results, key: -1e418682'
             label: Text
             name: '-1e418682'
+            widget: string
+          - hint: 'Original text: No matching results., key: -75764c4'
+            label: Text
+            name: '-75764c4'
             widget: string
           - hint: "Original text: About Lakeville Wine &\_Spirits, key: 6a48c8e1"
             label: Text
@@ -2111,6 +589,98 @@ collections:
             label: Text
             name: '-6b29a185'
             widget: string
+          - hint: 'Original text: Experience the world in a glass, key: bcff4f5'
+            label: Text
+            name: bcff4f5
+            widget: string
+          - hint: >-
+              Original text: At Lakeville Wine & Spirits, we believe that every
+              bottle of wine tells a story. Our shelves are lined with wines
+              from around the globe, selected for their unique flavors and
+              narratives. Whether you're a seasoned wine enthusiast or new to
+              the world of vino, our knowledgeable staff is here to guide you
+              towards the perfect bottle for any occasion. From luscious reds to
+              crisp whites and everything in between, your journey through the
+              world of wine starts here., key: -300f5c0e
+            label: Text
+            name: '-300f5c0e'
+            widget: text
+          - hint: >-
+              Original text: Our collection spans across continents and
+              vineyards, offering a diverse range of options to satisfy your
+              palate. Whether it's a local Connecticut wine or a vintage from
+              the vineyards of France, Spain, or Australia, we are confident
+              that you'll find something to delight in our selection., key:
+              -32ee4677
+            label: Text
+            name: '-32ee4677'
+            widget: text
+          - hint: 'Original text: Explore other Products, key: -607b561f'
+            label: Text
+            name: '-607b561f'
+            widget: string
+          - hint: 'Original text: A Spectrum of Spirits, key: -4224597'
+            label: Text
+            name: '-4224597'
+            widget: string
+          - hint: >-
+              Original text: Lakeville Wine & Spirits is not just about wine. We
+              have an impressive range of spirits to cater to your
+              cocktail-making needs or to enjoy neat. From the smoky peat of a
+              fine Scotch, the richness of a good Bourbon, to the botanical
+              complexities of a craft gin, we have it all., key: -38142732
+            label: Text
+            name: '-38142732'
+            widget: text
+          - hint: 'Original text: Expert Recommendations, key: 44da31e4'
+            label: Text
+            name: 44da31e4
+            widget: string
+          - hint: >-
+              Original text: Our staff is ready to help you navigate the world
+              of spirits. Whether you're looking for a unique bottle to add to
+              your collection or need advice on selecting the perfect spirit for
+              a cocktail recipe, we're here to assist., key: 2f76fcf0
+            label: Text
+            name: 2f76fcf0
+            widget: text
+          - hint: 'Original text: Craft and Beyond, key: -506a0d48'
+            label: Text
+            name: '-506a0d48'
+            widget: string
+          - hint: >-
+              Original text: Our beer selection features local craft beers,
+              popular domestic labels, and a variety of imported brews. We pride
+              ourselves on supporting local breweries and providing a platform
+              for our customers to explore the exciting world of craft beer.,
+              key: -5a94a3e8
+            label: Text
+            name: '-5a94a3e8'
+            widget: text
+          - hint: 'Original text: Tailored to Your Taste, key: -54fd743f'
+            label: Text
+            name: '-54fd743f'
+            widget: string
+          - hint: >-
+              Original text: Whether you're a fan of hoppy IPAs, smooth lagers,
+              or tart sours, our beer selection is designed to cater to all
+              tastes. If you're not sure what to choose, our friendly and
+              knowledgeable staff will be more than happy to provide
+              recommendations based on your preferences., key: 6b8bb445
+            label: Text
+            name: 6b8bb445
+            widget: text
+          - hint: >-
+              Original text: Don't forget to explore our rotating selection of
+              seasonal beers and limited edition releases to discover something
+              new!, key: -51018883
+            label: Text
+            name: '-51018883'
+            widget: text
+          - hint: 'Original text: ‍, key: 200d'
+            label: Text
+            name: 200d
+            widget: string
       - label: Links
         name: links
         file: cms/_data/links.json
@@ -2195,10 +765,6 @@ collections:
               -6801dffc
             label: Link
             name: '-6801dffc'
-            widget: string
-          - hint: 'Original link: /hotel-amenities/restaurant, key: -13d76ae3'
-            label: Link
-            name: '-13d76ae3'
             widget: string
       - label: Images
         name: images
@@ -2339,7 +905,33 @@ collections:
                 widget: string
                 required: false
           - label: Image
-            name: '0'
+            name: 1260ad51
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-457fc39f'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 365e83d9
             widget: object
             fields:
               - name: url
@@ -2391,7 +983,7 @@ collections:
                 widget: string
                 required: false
           - label: Image
-            name: '-443bf8f1'
+            name: 1d5d964c
             widget: object
             fields:
               - name: url
@@ -2417,45 +1009,6 @@ collections:
                 widget: string
                 required: false
           - label: Image
-            name: '-2eea9a83'
-            widget: object
-            fields:
-              - name: url
-                label: Image Url
-                widget: image
-                allow_multiple: false
-                required: false
-              - name: alt
-                label: Image Alt
-                widget: string
-                required: false
-          - label: Image
-            name: '-61ac50b9'
-            widget: object
-            fields:
-              - name: url
-                label: Image Url
-                widget: image
-                allow_multiple: false
-                required: false
-              - name: alt
-                label: Image Alt
-                widget: string
-                required: false
-          - label: Image
-            name: '-457fc39f'
-            widget: object
-            fields:
-              - name: url
-                label: Image Url
-                widget: image
-                allow_multiple: false
-                required: false
-              - name: alt
-                label: Image Alt
-                widget: string
-                required: false
-          - label: Image
             name: cee007c
             widget: object
             fields:
@@ -2469,7 +1022,7 @@ collections:
                 widget: string
                 required: false
           - label: Image
-            name: 365e83d9
+            name: '-267e5b9'
             widget: object
             fields:
               - name: url
@@ -2481,31 +1034,3 @@ collections:
                 label: Image Alt
                 widget: string
                 required: false
-          - label: Image
-            name: 1d5d964c
-            widget: object
-            fields:
-              - name: url
-                label: Image Url
-                widget: image
-                allow_multiple: false
-                required: false
-              - name: alt
-                label: Image Alt
-                widget: string
-                required: false
-          - label: Image
-            name: 392abfe8
-            widget: object
-            fields:
-              - name: url
-                label: Image Url
-                widget: image
-                allow_multiple: false
-                required: false
-              - name: alt
-                label: Image Alt
-                widget: string
-                required: false
-local_backend: true
-publish_mode: editorial_workflow

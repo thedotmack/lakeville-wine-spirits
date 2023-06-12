@@ -1,8 +1,4 @@
 {
-  "0": {
-    "url": "",
-    "alt": ""
-  },
   "5c2f0f5c": {
     "url": "/assets/images/images.",
     "alt": ""
@@ -43,6 +39,18 @@
     "url": "/assets/images/litchfield-distillery.jpg",
     "alt": ""
   },
+  "1260ad51": {
+    "url": "/assets/images/liq-1.jpg",
+    "alt": ""
+  },
+  "-457fc39f": {
+    "url": "/assets/images/beer-1.jpg",
+    "alt": ""
+  },
+  "365e83d9": {
+    "url": "/assets/images/dsc02801.jpeg",
+    "alt": ""
+  },
   "4a8dc094": {
     "url": "/assets/images/lakeville-outside.jpg",
     "alt": ""
@@ -55,40 +63,20 @@
     "url": "/assets/images/international-wines.jpg",
     "alt": ""
   },
-  "-443bf8f1": {
-    "url": "https://d3e54v103j8qbb.cloudfront.net/static/password-page-lock.832ca8e2c9.svg",
+  "1d5d964c": {
+    "url": "/assets/external/password-page-lock.832ca8e2c9.svg",
     "alt": ""
   },
   "-4d0a397c": {
     "url": "/assets/images/logo-light.svg",
     "alt": ""
   },
-  "-2eea9a83": {
-    "url": "/assets/images/louis-hansel-shotsoflouis-wvop_q2bg_a-unsplash.jpg",
-    "alt": ""
-  },
-  "-61ac50b9": {
-    "url": "https://uploads-ssl.webflow.com/5e13a534946b1253f7c522a4/5e397f7601fbdb500b2db72f_GettyImages-508069545.jpg",
-    "alt": ""
-  },
-  "-457fc39f": {
-    "url": "/assets/images/beer-1.jpg",
-    "alt": ""
-  },
   "cee007c": {
     "url": "/assets/images/wine-3.jpg",
     "alt": ""
   },
-  "365e83d9": {
-    "url": "/assets/images/dsc02801.jpeg",
-    "alt": ""
-  },
-  "1d5d964c": {
-    "url": "/assets/external/password-page-lock.832ca8e2c9.svg",
-    "alt": ""
-  },
-  "392abfe8": {
-    "url": "/assets/external/5e397f7601fbdb500b2db72f_gettyimages-508069545.jpg",
+  "-267e5b9": {
+    "url": "/assets/images/wines-1.jpg",
     "alt": ""
   }
 }
