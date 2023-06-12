@@ -689,29 +689,13 @@ collections:
             name: title
             widget: hidden
             default: Links
-          - hint: 'Original link: #, key: 23'
-            label: Link
-            name: '23'
-            widget: string
           - hint: 'Original link: /, key: 2f'
             label: Link
             name: 2f
             widget: string
-          - hint: 'Original link: /about-us, key: -66ead1f3'
+          - hint: 'Original link: /wine, key: 2ce00b8'
             label: Link
-            name: '-66ead1f3'
-            widget: string
-          - hint: 'Original link: /our-products, key: -367db38c'
-            label: Link
-            name: '-367db38c'
-            widget: string
-          - hint: 'Original link: /contact, key: 4b0e6111'
-            label: Link
-            name: 4b0e6111
-            widget: string
-          - hint: 'Original link: #about-us, key: -5a2005ff'
-            label: Link
-            name: '-5a2005ff'
+            name: 2ce00b8
             widget: string
           - hint: 'Original link: /liquor, key: 748d0af3'
             label: Link
@@ -721,9 +705,25 @@ collections:
             label: Link
             name: 2c464df
             widget: string
-          - hint: 'Original link: /wine, key: 2ce00b8'
+          - hint: 'Original link: /contact, key: 4b0e6111'
             label: Link
-            name: 2ce00b8
+            name: 4b0e6111
+            widget: string
+          - hint: 'Original link: #, key: 23'
+            label: Link
+            name: '23'
+            widget: string
+          - hint: 'Original link: /about-us, key: -66ead1f3'
+            label: Link
+            name: '-66ead1f3'
+            widget: string
+          - hint: 'Original link: /our-products, key: -367db38c'
+            label: Link
+            name: '-367db38c'
+            widget: string
+          - hint: 'Original link: #about-us, key: -5a2005ff'
+            label: Link
+            name: '-5a2005ff'
             widget: string
           - hint: >-
               Original link:
