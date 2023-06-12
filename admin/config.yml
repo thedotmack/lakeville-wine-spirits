@@ -713,6 +713,18 @@ collections:
             label: Link
             name: '-5a2005ff'
             widget: string
+          - hint: 'Original link: /liquor, key: 748d0af3'
+            label: Link
+            name: 748d0af3
+            widget: string
+          - hint: 'Original link: /beer, key: 2c464df'
+            label: Link
+            name: 2c464df
+            widget: string
+          - hint: 'Original link: /wine, key: 2ce00b8'
+            label: Link
+            name: 2ce00b8
+            widget: string
           - hint: >-
               Original link:
               https://grandstandard.webflow.io/stay-with-us#rooms, key:
@@ -1034,3 +1046,4 @@ collections:
                 label: Image Alt
                 widget: string
                 required: false
+publish_mode: editorial_workflow
