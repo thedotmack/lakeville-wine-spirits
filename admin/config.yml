@@ -12,7 +12,7 @@ collections:
     extension: md
     create: false
     delete: false
-    slug: "{{slug}}"
+    slug: '{{slug}}'
     editor:
       preview: false
     folder: cms/pages
@@ -26,7 +26,7 @@ collections:
       - label: Layout
         widget: hidden
         name: layout
-        default: "{{slug}}.html"
+        default: '{{slug}}.html'
       - label: Seo
         name: seo
         widget: object
@@ -84,7 +84,7 @@ collections:
     extension: json
     create: false
     delete: false
-    slug: "{{slug}}"
+    slug: '{{slug}}'
     editor:
       preview: false
     files:
@@ -140,17 +140,17 @@ collections:
                 widget: select
                 multiple: true
                 options:
-                  - label: "500"
+                  - label: '500'
                     value: 500
-                  - label: "800"
+                  - label: '800'
                     value: 800
-                  - label: "1080"
+                  - label: '1080'
                     value: 1080
-                  - label: "1600"
+                  - label: '1600'
                     value: 1600
-                  - label: "2000"
+                  - label: '2000'
                     value: 2000
-                  - label: "2600"
+                  - label: '2600'
                     value: 2600
       - label: Colors
         name: colors
@@ -168,57 +168,57 @@ collections:
             name: title
             widget: hidden
             default: Texts
-          - hint: "Original text: Home, key: 2268ff"
+          - hint: 'Original text: Home, key: 2268ff'
             label: Text
             name: 2268ff
             widget: string
-          - hint: "Original text: Wine, key: 292429"
+          - hint: 'Original text: Wine, key: 292429'
             label: Text
-            name: "292429"
+            name: '292429'
             widget: string
-          - hint: "Original text: Liquor, key: -7852e9dc"
+          - hint: 'Original text: Liquor, key: -7852e9dc'
             label: Text
-            name: "-7852e9dc"
+            name: '-7852e9dc'
             widget: string
-          - hint: "Original text: Beer, key: 1f8850"
+          - hint: 'Original text: Beer, key: 1f8850'
             label: Text
             name: 1f8850
             widget: string
-          - hint: "Original text: Contact, key: -64104400"
+          - hint: 'Original text: Contact, key: -64104400'
             label: Text
-            name: "-64104400"
+            name: '-64104400'
             widget: string
-          - hint: "Original text: 336 Main St, key: 2b8639de"
+          - hint: 'Original text: 336 Main St, key: 2b8639de'
             label: Text
             name: 2b8639de
             widget: string
-          - hint: "Original text: Lakeville, CT 06039, key: 34f5ff18"
+          - hint: 'Original text: Lakeville, CT 06039, key: 34f5ff18'
             label: Text
             name: 34f5ff18
             widget: string
-          - hint: "Original text: 860-435-2600, key: -a7bf46a"
+          - hint: 'Original text: 860-435-2600, key: -a7bf46a'
             label: Text
-            name: "-a7bf46a"
+            name: '-a7bf46a'
             widget: string
-          - hint: "Original text: About Us, key: 645efc51"
+          - hint: 'Original text: About Us, key: 645efc51'
             label: Text
             name: 645efc51
             widget: string
-          - hint: "Original text: Products, key: -37f9ca7c"
+          - hint: 'Original text: Products, key: -37f9ca7c'
             label: Text
-            name: "-37f9ca7c"
+            name: '-37f9ca7c'
             widget: string
-          - hint: "Original text: CONTACT, key: 6382b000"
+          - hint: 'Original text: CONTACT, key: 6382b000'
             label: Text
             name: 6382b000
             widget: string
-          - hint: "Original text: 336 Main st, Lakeville, CT 06039, key: 6c6d6226"
+          - hint: 'Original text: 336 Main st, Lakeville, CT 06039, key: 6c6d6226'
             label: Text
             name: 6c6d6226
             widget: string
-          - hint: "Original text: Welcome, key: -5347ccbe"
+          - hint: 'Original text: Welcome, key: -5347ccbe'
             label: Text
-            name: "-5347ccbe"
+            name: '-5347ccbe'
             widget: string
           - hint: >-
               Original text: The Destination for Wine & Spirits Enthusiasts,
@@ -234,9 +234,9 @@ collections:
             label: Text
             name: 6d7bc97d
             widget: text
-          - hint: "Original text: get to know us, key: -17a16148"
+          - hint: 'Original text: get to know us, key: -17a16148'
             label: Text
-            name: "-17a16148"
+            name: '-17a16148'
             widget: string
           - hint: >-
               Original text: Lakeville Wine & Spirits is a locally owned and
@@ -244,7 +244,7 @@ collections:
               beers, and spirits to Lakeville and surrounding communities. ,
               key: -72e2dc36
             label: Text
-            name: "-72e2dc36"
+            name: '-72e2dc36'
             widget: text
           - hint: >-
               Original text: With our deep commitment to providing excellent
@@ -252,11 +252,11 @@ collections:
               products we offer, we aim to enhance your shopping experience.,
               key: -3a8f4342
             label: Text
-            name: "-3a8f4342"
+            name: '-3a8f4342'
             widget: text
-          - hint: "Original text: Our Products, key: -7a5fd008"
+          - hint: 'Original text: Our Products, key: -7a5fd008'
             label: Text
-            name: "-7a5fd008"
+            name: '-7a5fd008'
             widget: string
           - hint: >-
               Original text: If you have a preference for the finest wines, a
@@ -265,17 +265,17 @@ collections:
               ourselves on our diverse product selection that caters to all
               tastes and budgets., key: -3e5f39c3
             label: Text
-            name: "-3e5f39c3"
+            name: '-3e5f39c3'
             widget: text
-          - hint: "Original text: learn more, key: 367f27b1"
+          - hint: 'Original text: learn more, key: 367f27b1'
             label: Text
             name: 367f27b1
             widget: string
           - hint: "Original text: EXPLORE\_OUR\_SELECTIONS, key: -5e4e73d8"
             label: Text
-            name: "-5e4e73d8"
+            name: '-5e4e73d8'
             widget: string
-          - hint: "Original text: VIEW, key: 2832a5"
+          - hint: 'Original text: VIEW, key: 2832a5'
             label: Text
             name: 2832a5
             widget: string
@@ -284,9 +284,9 @@ collections:
               artisanal gin, we have you covered with our extensive spirits
               selection., key: -37177dea
             label: Text
-            name: "-37177dea"
+            name: '-37177dea'
             widget: text
-          - hint: "Original text: View details, key: 4d42a7e7"
+          - hint: 'Original text: View details, key: 4d42a7e7'
             label: Text
             name: 4d42a7e7
             widget: string
@@ -303,7 +303,7 @@ collections:
             label: Text
             name: cb05c11
             widget: text
-          - hint: "Original text: Our Mission, key: 3dba0078"
+          - hint: 'Original text: Our Mission, key: 3dba0078'
             label: Text
             name: 3dba0078
             widget: string
@@ -313,9 +313,9 @@ collections:
               shopping experience that leaves you delighted and enlightened. ,
               key: -60205128
             label: Text
-            name: "-60205128"
+            name: '-60205128'
             widget: text
-          - hint: "Original text: Visit us, key: 624d95b3"
+          - hint: 'Original text: Visit us, key: 624d95b3'
             label: Text
             name: 624d95b3
             widget: string
@@ -323,19 +323,19 @@ collections:
             label: Text
             name: 6ea8c068
             widget: string
-          - hint: "Original text: Protected Page, key: -11d4bbff"
+          - hint: 'Original text: Protected Page, key: -11d4bbff'
             label: Text
-            name: "-11d4bbff"
+            name: '-11d4bbff'
             widget: string
           - hint: >-
               Original text: Incorrect password. Please try again., key:
               -f5c4b5f
             label: Text
-            name: "-f5c4b5f"
+            name: '-f5c4b5f'
             widget: string
-          - hint: "Original text: Page Not Found, key: -40b0787c"
+          - hint: 'Original text: Page Not Found, key: -40b0787c'
             label: Text
-            name: "-40b0787c"
+            name: '-40b0787c'
             widget: string
           - hint: >-
               Original text: The page you are looking for doesn't exist or has
@@ -343,90 +343,92 @@ collections:
             label: Text
             name: 583f3656
             widget: string
-          - hint: "Original text: back to home, key: -7e7f8ad5"
+          - hint: 'Original text: back to home, key: -7e7f8ad5'
             label: Text
-            name: "-7e7f8ad5"
+            name: '-7e7f8ad5'
             widget: string
           - hint: >-
-              Original text: ., key: 5599e894
+              Original text: The Grand Standard offers peace and serenity to
+              working professionals who appreciate exceptional experiences and
+              service., key: 5599e894
             label: Text
-            name: "5599e894"
+            name: '5599e894'
             widget: text
-          - hint: "Original text: contact us, key: 8556e9e"
+          - hint: 'Original text: contact us, key: 8556e9e'
             label: Text
             name: 8556e9e
             widget: string
-          - hint: "Original text: Stay, key: 277a79"
+          - hint: 'Original text: Stay, key: 277a79'
             label: Text
             name: 277a79
             widget: string
-          - hint: "Original text: Stay with us, key: -18af9a6f"
+          - hint: 'Original text: Stay with us, key: -18af9a6f'
             label: Text
-            name: "-18af9a6f"
+            name: '-18af9a6f'
             widget: string
-          - hint: "Original text: Explore rooms, key: -4082a0f5"
+          - hint: 'Original text: Explore rooms, key: -4082a0f5'
             label: Text
-            name: "-4082a0f5"
+            name: '-4082a0f5'
             widget: string
-          - hint: "Original text: enjoy amenities, key: -743dd63e"
+          - hint: 'Original text: enjoy amenities, key: -743dd63e'
             label: Text
-            name: "-743dd63e"
+            name: '-743dd63e'
             widget: string
-          - hint: "Original text: Dine, key: 20811c"
+          - hint: 'Original text: Dine, key: 20811c'
             label: Text
             name: 20811c
             widget: string
-          - hint: "Original text: dine with us, key: -29553aec"
+          - hint: 'Original text: dine with us, key: -29553aec'
             label: Text
-            name: "-29553aec"
+            name: '-29553aec'
             widget: string
-          - hint: "Original text: enjoy a meal, key: -2ede44a9"
+          - hint: 'Original text: enjoy a meal, key: -2ede44a9'
             label: Text
-            name: "-2ede44a9"
+            name: '-2ede44a9'
             widget: string
-          - hint: "Original text: have a drink, key: -189f6a9f"
+          - hint: 'Original text: have a drink, key: -189f6a9f'
             label: Text
-            name: "-189f6a9f"
+            name: '-189f6a9f'
             widget: string
-          - hint: "Original text: Live, key: 24250c"
+          - hint: 'Original text: Live, key: 24250c'
             label: Text
             name: 24250c
             widget: string
-          - hint: "Original text: your best life, key: -2ec7f7f5"
+          - hint: 'Original text: your best life, key: -2ec7f7f5'
             label: Text
-            name: "-2ec7f7f5"
+            name: '-2ec7f7f5'
             widget: string
-          - hint: "Original text: new experiences, key: -10364637"
+          - hint: 'Original text: new experiences, key: -10364637'
             label: Text
-            name: "-10364637"
+            name: '-10364637'
             widget: string
-          - hint: "Original text: upcoming events, key: -22ae7763"
+          - hint: 'Original text: upcoming events, key: -22ae7763'
             label: Text
-            name: "-22ae7763"
+            name: '-22ae7763'
             widget: string
-          - hint: "Original text: Learn, key: 45e5e24"
+          - hint: 'Original text: Learn, key: 45e5e24'
             label: Text
             name: 45e5e24
             widget: string
-          - hint: "Original text: learn about us, key: 7c0afa6d"
+          - hint: 'Original text: learn about us, key: 7c0afa6d'
             label: Text
             name: 7c0afa6d
             widget: string
-          - hint: "Original text: Meet our team, key: -4513f1b6"
+          - hint: 'Original text: Meet our team, key: -4513f1b6'
             label: Text
-            name: "-4513f1b6"
+            name: '-4513f1b6'
             widget: string
-          - hint: "Original text: stay updated, key: 7ec719f4"
+          - hint: 'Original text: stay updated, key: 7ec719f4'
             label: Text
             name: 7ec719f4
             widget: string
-          - hint: "Original text: Search Results, key: -1e418682"
+          - hint: 'Original text: Search Results, key: -1e418682'
             label: Text
-            name: "-1e418682"
+            name: '-1e418682'
             widget: string
-          - hint: "Original text: No matching results., key: -75764c4"
+          - hint: 'Original text: No matching results., key: -75764c4'
             label: Text
-            name: "-75764c4"
+            name: '-75764c4'
             widget: string
           - hint: "Original text: About Lakeville Wine &\_Spirits, key: 6a48c8e1"
             label: Text
@@ -437,7 +439,7 @@ collections:
               operated wine, beer, and spirits store located in the heart of
               Lakeville, CT. , key: -42d9fed1
             label: Text
-            name: "-42d9fed1"
+            name: '-42d9fed1'
             widget: text
           - hint: >-
               Original text: We opened our doors with a simple mission: to
@@ -448,7 +450,7 @@ collections:
             label: Text
             name: 790eb8b7
             widget: text
-          - hint: "Original text: Quality and Variety, key: 4389b51e"
+          - hint: 'Original text: Quality and Variety, key: 4389b51e'
             label: Text
             name: 4389b51e
             widget: string
@@ -462,7 +464,7 @@ collections:
             label: Text
             name: 756b0b9a
             widget: text
-          - hint: "Original text: Our Team, key: 290af1"
+          - hint: 'Original text: Our Team, key: 290af1'
             label: Text
             name: 290af1
             widget: string
@@ -477,7 +479,7 @@ collections:
             label: Text
             name: 53f2cc8a
             widget: text
-          - hint: "Original text: Community-Centric, key: 4da7e040"
+          - hint: 'Original text: Community-Centric, key: 4da7e040'
             label: Text
             name: 4da7e040
             widget: string
@@ -489,9 +491,9 @@ collections:
               the community that supports us, participating in local events and
               supporting local charities whenever we can., key: -2ccd8aa4
             label: Text
-            name: "-2ccd8aa4"
+            name: '-2ccd8aa4'
             widget: text
-          - hint: "Original text: Visit Us, key: 624d91d3"
+          - hint: 'Original text: Visit Us, key: 624d91d3'
             label: Text
             name: 624d91d3
             widget: string
@@ -502,7 +504,7 @@ collections:
               world of wines and spirits, there's always something to discover
               at Lakeville Wine & Spirits., key: 40300858
             label: Text
-            name: "40300858"
+            name: '40300858'
             widget: text
           - hint: >-
               Original text: For any inquiries or special requests, please
@@ -511,7 +513,7 @@ collections:
             label: Text
             name: e454a45
             widget: text
-          - hint: "Original text: Our Selection, key: 6cfe578"
+          - hint: 'Original text: Our Selection, key: 6cfe578'
             label: Text
             name: 6cfe578
             widget: string
@@ -519,7 +521,7 @@ collections:
             label: Text
             name: 770ff83c
             widget: string
-          - hint: "Original text: Discover Something New, key: 6b9874e3"
+          - hint: 'Original text: Discover Something New, key: 6b9874e3'
             label: Text
             name: 6b9874e3
             widget: string
@@ -529,21 +531,21 @@ collections:
               globe. Our goal is to provide a diverse range of options that
               cater to all tastes, occasions, and budgets., key: -49841845
             label: Text
-            name: "-49841845"
+            name: '-49841845'
             widget: text
           - hint: "Original text: Lakeville wine &\_Spirits, key: -4f9d3492"
             label: Text
-            name: "-4f9d3492"
+            name: '-4f9d3492'
             widget: string
-          - hint: "Original text: Contact Us, key: 7f2746de"
+          - hint: 'Original text: Contact Us, key: 7f2746de'
             label: Text
             name: 7f2746de
             widget: string
-          - hint: "Original text: 336 Main St., key: 45410210"
+          - hint: 'Original text: 336 Main St., key: 45410210'
             label: Text
-            name: "45410210"
+            name: '45410210'
             widget: string
-          - hint: "Original text: hello@lakevillewineandspirits.com, key: 6b2c343c"
+          - hint: 'Original text: hello@lakevillewineandspirits.com, key: 6b2c343c'
             label: Text
             name: 6b2c343c
             widget: string
@@ -551,43 +553,43 @@ collections:
             label: Text
             name: 74a9978e
             widget: string
-          - hint: "Original text: Store Hours:, key: 2593b6a"
+          - hint: 'Original text: Store Hours:, key: 2593b6a'
             label: Text
             name: 2593b6a
             widget: string
           - hint: "Original text: Monday\_– 10:00 AM to 8:00 PM, key: -59babaf8"
             label: Text
-            name: "-59babaf8"
+            name: '-59babaf8'
             widget: string
           - hint: "Original text: Tuesday\_– 10:00 AM to 8:00 PM, key: -5ec6a1bb"
             label: Text
-            name: "-5ec6a1bb"
+            name: '-5ec6a1bb'
             widget: string
           - hint: "Original text: Wednesday\_– 10:00 AM to 8:00 PM, key: -43c972"
             label: Text
-            name: "-43c972"
+            name: '-43c972'
             widget: string
           - hint: "Original text: Thursday\_– 10:00 AM to 8:00 PM, key: -2c29dae"
             label: Text
-            name: "-2c29dae"
+            name: '-2c29dae'
             widget: string
           - hint: "Original text: Friday\_– 10:00 AM to 9:00 PM, key: -17d720a8"
             label: Text
-            name: "-17d720a8"
+            name: '-17d720a8'
             widget: string
           - hint: "Original text: Saturday\_– 10:00 AM to 9:00 PM, key: -366f75ce"
             label: Text
-            name: "-366f75ce"
+            name: '-366f75ce'
             widget: string
           - hint: "Original text: Sunday\_– 11:00 AM to 5:00 PM, key: -370ef9dc"
             label: Text
-            name: "-370ef9dc"
+            name: '-370ef9dc'
             widget: string
-          - hint: "Original text: Holiday Hours – 11:00 AM to 5:00 PM, key: -6b29a185"
+          - hint: 'Original text: Holiday Hours – 11:00 AM to 5:00 PM, key: -6b29a185'
             label: Text
-            name: "-6b29a185"
+            name: '-6b29a185'
             widget: string
-          - hint: "Original text: Experience the world in a glass, key: bcff4f5"
+          - hint: 'Original text: Experience the world in a glass, key: bcff4f5'
             label: Text
             name: bcff4f5
             widget: string
@@ -601,7 +603,7 @@ collections:
               crisp whites and everything in between, your journey through the
               world of wine starts here., key: -300f5c0e
             label: Text
-            name: "-300f5c0e"
+            name: '-300f5c0e'
             widget: text
           - hint: >-
               Original text: Our collection spans across continents and
@@ -611,15 +613,15 @@ collections:
               that you'll find something to delight in our selection., key:
               -32ee4677
             label: Text
-            name: "-32ee4677"
+            name: '-32ee4677'
             widget: text
-          - hint: "Original text: Explore other Products, key: -607b561f"
+          - hint: 'Original text: Explore other Products, key: -607b561f'
             label: Text
-            name: "-607b561f"
+            name: '-607b561f'
             widget: string
-          - hint: "Original text: A Spectrum of Spirits, key: -4224597"
+          - hint: 'Original text: A Spectrum of Spirits, key: -4224597'
             label: Text
-            name: "-4224597"
+            name: '-4224597'
             widget: string
           - hint: >-
               Original text: Lakeville Wine & Spirits is not just about wine. We
@@ -628,9 +630,9 @@ collections:
               fine Scotch, the richness of a good Bourbon, to the botanical
               complexities of a craft gin, we have it all., key: -38142732
             label: Text
-            name: "-38142732"
+            name: '-38142732'
             widget: text
-          - hint: "Original text: Expert Recommendations, key: 44da31e4"
+          - hint: 'Original text: Expert Recommendations, key: 44da31e4'
             label: Text
             name: 44da31e4
             widget: string
@@ -642,9 +644,9 @@ collections:
             label: Text
             name: 2f76fcf0
             widget: text
-          - hint: "Original text: Craft and Beyond, key: -506a0d48"
+          - hint: 'Original text: Craft and Beyond, key: -506a0d48'
             label: Text
-            name: "-506a0d48"
+            name: '-506a0d48'
             widget: string
           - hint: >-
               Original text: Our beer selection features local craft beers,
@@ -653,11 +655,11 @@ collections:
               for our customers to explore the exciting world of craft beer.,
               key: -5a94a3e8
             label: Text
-            name: "-5a94a3e8"
+            name: '-5a94a3e8'
             widget: text
-          - hint: "Original text: Tailored to Your Taste, key: -54fd743f"
+          - hint: 'Original text: Tailored to Your Taste, key: -54fd743f'
             label: Text
-            name: "-54fd743f"
+            name: '-54fd743f'
             widget: string
           - hint: >-
               Original text: Whether you're a fan of hoppy IPAs, smooth lagers,
@@ -673,9 +675,9 @@ collections:
               seasonal beers and limited edition releases to discover something
               new!, key: -51018883
             label: Text
-            name: "-51018883"
+            name: '-51018883'
             widget: text
-          - hint: "Original text: ‍, key: 200d"
+          - hint: 'Original text: ‍, key: 200d'
             label: Text
             name: 200d
             widget: string
@@ -687,39 +689,39 @@ collections:
             name: title
             widget: hidden
             default: Links
-          - hint: "Original link: #, key: 23"
+          - hint: 'Original link: #, key: 23'
             label: Link
-            name: "23"
+            name: '23'
             widget: string
-          - hint: "Original link: /, key: 2f"
+          - hint: 'Original link: /, key: 2f'
             label: Link
             name: 2f
             widget: string
-          - hint: "Original link: /about-us, key: -66ead1f3"
+          - hint: 'Original link: /about-us, key: -66ead1f3'
             label: Link
-            name: "-66ead1f3"
+            name: '-66ead1f3'
             widget: string
-          - hint: "Original link: /our-products, key: -367db38c"
+          - hint: 'Original link: /our-products, key: -367db38c'
             label: Link
-            name: "-367db38c"
+            name: '-367db38c'
             widget: string
-          - hint: "Original link: /contact, key: 4b0e6111"
+          - hint: 'Original link: /contact, key: 4b0e6111'
             label: Link
             name: 4b0e6111
             widget: string
-          - hint: "Original link: #about-us, key: -5a2005ff"
+          - hint: 'Original link: #about-us, key: -5a2005ff'
             label: Link
-            name: "-5a2005ff"
+            name: '-5a2005ff'
             widget: string
-          - hint: "Original link: /liquor, key: 748d0af3"
+          - hint: 'Original link: /liquor, key: 748d0af3'
             label: Link
             name: 748d0af3
             widget: string
-          - hint: "Original link: /beer, key: 2c464df"
+          - hint: 'Original link: /beer, key: 2c464df'
             label: Link
             name: 2c464df
             widget: string
-          - hint: "Original link: /wine, key: 2ce00b8"
+          - hint: 'Original link: /wine, key: 2ce00b8'
             label: Link
             name: 2ce00b8
             widget: string
@@ -728,7 +730,7 @@ collections:
               https://grandstandard.webflow.io/stay-with-us#rooms, key:
               -25bccaf1
             label: Link
-            name: "-25bccaf1"
+            name: '-25bccaf1'
             widget: string
           - hint: >-
               Original link:
@@ -747,7 +749,7 @@ collections:
               Original link: https://grandstandard.webflow.io/menu/drinks, key:
               -7e065dde
             label: Link
-            name: "-7e065dde"
+            name: '-7e065dde'
             widget: string
           - hint: >-
               Original link:
@@ -774,7 +776,7 @@ collections:
               https://grandstandard.webflow.io/learn-about-us#journal, key:
               -6801dffc
             label: Link
-            name: "-6801dffc"
+            name: '-6801dffc'
             widget: string
       - label: Images
         name: images
@@ -798,7 +800,7 @@ collections:
                 widget: string
                 required: false
           - label: Image
-            name: "-118d5c88"
+            name: '-118d5c88'
             widget: object
             fields:
               - name: url
@@ -824,7 +826,7 @@ collections:
                 widget: string
                 required: false
           - label: Image
-            name: "-6abacace"
+            name: '-6abacace'
             widget: object
             fields:
               - name: url
@@ -850,7 +852,7 @@ collections:
                 widget: string
                 required: false
           - label: Image
-            name: "-3492e923"
+            name: '-3492e923'
             widget: object
             fields:
               - name: url
@@ -863,7 +865,7 @@ collections:
                 widget: string
                 required: false
           - label: Image
-            name: "-3e147261"
+            name: '-3e147261'
             widget: object
             fields:
               - name: url
@@ -876,7 +878,7 @@ collections:
                 widget: string
                 required: false
           - label: Image
-            name: "-6733cbce"
+            name: '-6733cbce'
             widget: object
             fields:
               - name: url
@@ -889,7 +891,7 @@ collections:
                 widget: string
                 required: false
           - label: Image
-            name: "-44a97794"
+            name: '-44a97794'
             widget: object
             fields:
               - name: url
@@ -902,7 +904,7 @@ collections:
                 widget: string
                 required: false
           - label: Image
-            name: "-4cf45baf"
+            name: '-4cf45baf'
             widget: object
             fields:
               - name: url
@@ -928,7 +930,7 @@ collections:
                 widget: string
                 required: false
           - label: Image
-            name: "-457fc39f"
+            name: '-457fc39f'
             widget: object
             fields:
               - name: url
@@ -967,7 +969,7 @@ collections:
                 widget: string
                 required: false
           - label: Image
-            name: "-5b15df44"
+            name: '-5b15df44'
             widget: object
             fields:
               - name: url
@@ -1006,7 +1008,7 @@ collections:
                 widget: string
                 required: false
           - label: Image
-            name: "-4d0a397c"
+            name: '-4d0a397c'
             widget: object
             fields:
               - name: url
@@ -1032,7 +1034,7 @@ collections:
                 widget: string
                 required: false
           - label: Image
-            name: "-267e5b9"
+            name: '-267e5b9'
             widget: object
             fields:
               - name: url
