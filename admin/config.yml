@@ -1,0 +1,2484 @@
+backend:
+  name: git-gateway
+  accept_roles:
+    - admin
+    - editor
+media_folder: theme/assets/images
+public_folder: /assets/images
+collections:
+  - name: pages
+    label: Pages
+    identifier_field: title
+    extension: md
+    create: false
+    delete: false
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    folder: cms/pages
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '{{slug}}.html'
+      - &ref_0
+        label: Seo
+        name: seo
+        widget: object
+        collapsed: true
+        fields:
+          - label: Title
+            name: title
+            widget: string
+            required: false
+          - label: Description
+            name: description
+            widget: string
+            required: false
+          - label: No index
+            name: noindex
+            widget: boolean
+            default: false
+            required: false
+          - label: Open Graph Title
+            name: og:title
+            widget: string
+            required: false
+          - label: Open Graph Image
+            name: og:image
+            widget: image
+            required: false
+            media_library:
+              config:
+                multiple: false
+          - label: Twitter Title
+            name: twitter:title
+            widget: string
+            default: summary
+            required: false
+          - label: Twitter Card
+            name: twitter:card
+            widget: string
+            default: summary
+            required: false
+          - label: Twitter Site
+            name: twitter:site
+            widget: string
+            required: false
+          - label: Twitter Creator
+            name: twitter:creator
+            widget: string
+            required: false
+          - label: Additional HTML tags
+            name: additional_tags
+            widget: text
+            required: false
+  - name: products
+    label: Our Products
+    folder: cms/products
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - label: Details
+        name: body
+        widget: markdown
+        required: false
+      - hint: ''
+        name: f_price
+        label: Price
+        widget: string
+        required: false
+      - hint: ''
+        name: f_image-main
+        label: Large Image
+        widget: object
+        required: true
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: true
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-thumb
+        label: Small Image
+        widget: object
+        required: true
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: true
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-gallery
+        label: Image Gallery
+        widget: list
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_overview
+        label: Description
+        widget: string
+        required: true
+      - hint: ''
+        name: f_booking-link
+        label: Booking Link
+        widget: string
+        required: false
+      - hint: ''
+        name: f_ensuite-amenities
+        label: Ensuite Amenities
+        widget: relation
+        required: false
+        collection: room_amenities
+        value_field: cms/room-amenities/{{slug}}.md
+        search_fields:
+          - slug
+          - name
+        display_fields:
+          - title
+        multiple: true
+      - hint: ''
+        name: f_sort-order
+        label: Sort Order
+        widget: number
+        required: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: products
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[products].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - name: room_amenities
+    label: Hotel Room Amenities
+    folder: cms/room-amenities
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Title
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - label: Details
+        name: body
+        widget: markdown
+        required: false
+      - hint: ''
+        name: f_image
+        label: Icon
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_description-2
+        label: Description
+        widget: string
+        required: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: room-amenities
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[room-amenities].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - name: hotel_amenities
+    label: Hotel Amenities
+    folder: cms/hotel-amenities
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - label: Details
+        name: body
+        widget: markdown
+        required: false
+      - hint: ''
+        name: f_headline
+        label: Headline
+        widget: string
+        required: true
+      - hint: ''
+        name: f_subhead
+        label: Subhead
+        widget: string
+        required: false
+      - hint: ''
+        name: f_large-image
+        label: Large Image
+        widget: object
+        required: true
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: true
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_small-image
+        label: Small Image
+        widget: object
+        required: true
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: true
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-gallery
+        label: Image Gallery
+        widget: list
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_layouts
+        label: Layouts
+        widget: select
+        required: false
+        options:
+          - label: Layout (Restaurant)
+            value: Layout (Restaurant)
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: hotel-amenities
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[hotel-amenities].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - name: services
+    label: Hotel Services
+    folder: cms/services
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - label: Details
+        name: body
+        widget: markdown
+        required: false
+      - hint: ''
+        name: f_description
+        label: Description
+        widget: string
+        required: false
+      - hint: ''
+        name: f_small-image
+        label: Icon
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: services
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[services].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - name: menu
+    label: Menus
+    folder: cms/menu
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: f_menu
+        label: Layout
+        widget: select
+        required: true
+        options:
+          - label: Menu (Breakfast)
+            value: Menu (Breakfast)
+          - label: Menu (Lunch)
+            value: Menu (Lunch)
+          - label: Menu (Dinner)
+            value: Menu (Dinner)
+          - label: Menu (Cocktails)
+            value: Menu (Cocktails)
+      - hint: ''
+        name: f_description-2
+        label: Description
+        widget: string
+        required: true
+      - hint: ''
+        name: f_image-main
+        label: Large Image
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-thumb
+        label: Small Image
+        widget: object
+        required: true
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: true
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-gallery
+        label: Image Gallery
+        widget: list
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_sort-order
+        label: Sort Order
+        widget: number
+        required: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: menu
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[menu].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - name: food
+    label: Food
+    folder: cms/food
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - label: Details
+        name: body
+        widget: markdown
+        required: false
+      - hint: ''
+        name: f_short-description
+        label: Description
+        widget: string
+        required: false
+      - hint: ''
+        name: f_price
+        label: Price
+        widget: string
+        required: false
+      - hint: ''
+        name: f_menu
+        label: Menu
+        widget: relation
+        required: true
+        collection: menu
+        value_field: cms/menu/{{slug}}.md
+        search_fields:
+          - slug
+          - name
+        display_fields:
+          - title
+        multiple: true
+      - hint: ''
+        name: f_category-2
+        label: Category
+        widget: relation
+        required: true
+        collection: food_category
+        value_field: cms/food-category/{{slug}}.md
+        search_fields:
+          - slug
+          - name
+        display_fields:
+          - title
+        multiple: true
+      - hint: ''
+        name: f_main-image
+        label: Large Image
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_thumbnail
+        label: Small Image
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: food
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[food].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - name: food_category
+    label: Food Categories
+    folder: cms/food-category
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: food-category
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[food-category].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - name: drinks
+    label: Drinks
+    folder: cms/drinks
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - label: Details
+        name: body
+        widget: markdown
+        required: false
+      - hint: ''
+        name: f_description
+        label: Description
+        widget: string
+        required: false
+      - hint: ''
+        name: f_price
+        label: Price
+        widget: string
+        required: false
+      - hint: ''
+        name: f_menu-2
+        label: Menu
+        widget: relation
+        required: true
+        collection: menu
+        value_field: cms/menu/{{slug}}.md
+        search_fields:
+          - slug
+          - name
+        display_fields:
+          - title
+        multiple: false
+      - hint: ''
+        name: f_drink-category
+        label: Drink Category
+        widget: relation
+        required: true
+        collection: drink_categories
+        value_field: cms/drink-categories/{{slug}}.md
+        search_fields:
+          - slug
+          - name
+        display_fields:
+          - title
+        multiple: false
+      - hint: ''
+        name: f_large-image
+        label: Large Image
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_small-image
+        label: Small Image
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: drinks
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[drinks].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - name: drink_categories
+    label: Drink Categories
+    folder: cms/drink-categories
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: drink-categories
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[drink-categories].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - name: experiences
+    label: Experiences
+    folder: cms/experiences
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Title
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - label: Details
+        name: body
+        widget: markdown
+        required: false
+      - hint: ''
+        name: f_image-main
+        label: Large Image
+        widget: object
+        required: true
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: true
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-thumb
+        label: Small Image
+        widget: object
+        required: true
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: true
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-gallery
+        label: Image Gallery
+        widget: list
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_description-2
+        label: Description
+        widget: string
+        required: true
+      - hint: ''
+        name: f_booking-link
+        label: Booking Link
+        widget: string
+        required: true
+      - hint: ''
+        name: f_price
+        label: Price
+        widget: string
+        required: false
+      - hint: ''
+        name: f_featured
+        label: Featured
+        widget: boolean
+        required: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: experiences
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[experiences].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - name: events
+    label: Events
+    folder: cms/events
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Title
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - label: Details
+        name: body
+        widget: markdown
+        required: false
+      - hint: ''
+        name: f_description
+        label: Description
+        widget: string
+        required: true
+      - hint: ''
+        name: f_event-date
+        label: When
+        widget: datetime
+        required: true
+      - hint: ''
+        name: f_where
+        label: Where
+        widget: string
+        required: true
+      - hint: ''
+        name: f_map-link
+        label: Map Link
+        widget: string
+        required: false
+      - hint: ''
+        name: f_ticket-needed
+        label: Ticket Needed?
+        widget: boolean
+        required: false
+      - hint: ''
+        name: f_price
+        label: Price
+        widget: string
+        required: false
+      - hint: ''
+        name: f_purchase-link
+        label: Purchase Link
+        widget: string
+        required: false
+      - hint: ''
+        name: f_small-image
+        label: Small Image
+        widget: object
+        required: true
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: true
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_large-image
+        label: Large Image
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_category
+        label: Category
+        widget: relation
+        required: false
+        collection: event_categories
+        value_field: cms/event-categories/{{slug}}.md
+        search_fields:
+          - slug
+          - name
+        display_fields:
+          - title
+        multiple: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: events
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[events].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - name: event_categories
+    label: Event Categories
+    folder: cms/event-categories
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: event-categories
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[event-categories].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - name: articles
+    label: Articles
+    folder: cms/articles
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Title
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - label: Body
+        name: body
+        widget: markdown
+        required: false
+      - hint: ''
+        name: f_category
+        label: Category
+        widget: relation
+        required: false
+        collection: article_categories
+        value_field: cms/article-categories/{{slug}}.md
+        search_fields:
+          - slug
+          - name
+        display_fields:
+          - title
+        multiple: false
+      - hint: ''
+        name: f_summary
+        label: Intro
+        widget: string
+        required: true
+      - hint: ''
+        name: f_large-image
+        label: Large Image
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_small-image
+        label: Small Image
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-caption
+        label: Image Caption
+        widget: string
+        required: false
+      - hint: ''
+        name: f_image-caption-link
+        label: Image Caption Link
+        widget: string
+        required: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: articles
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[articles].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - name: article_categories
+    label: Article Categories
+    folder: cms/article-categories
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: article-categories
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[article-categories].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - name: team_members
+    label: Team Members
+    folder: cms/team-members
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - label: Bio
+        name: body
+        widget: markdown
+        required: false
+      - hint: ''
+        name: f_job-title
+        label: Job Title
+        widget: string
+        required: true
+      - hint: ''
+        name: f_large-image
+        label: Large Image
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_small-image
+        label: Small Image
+        widget: object
+        required: true
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: true
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_social-media-link
+        label: Social Media Link
+        widget: string
+        required: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: team-members
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[team-members].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - name: faq
+    label: FAQs
+    folder: cms/faq
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Question
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - label: Answer
+        name: body
+        widget: markdown
+        required: false
+      - hint: ''
+        name: f_category
+        label: Category
+        widget: relation
+        required: true
+        collection: faq_categories
+        value_field: cms/faq-categories/{{slug}}.md
+        search_fields:
+          - slug
+          - name
+        display_fields:
+          - title
+        multiple: true
+      - hint: ''
+        name: f_sort-order
+        label: Sort Order
+        widget: number
+        required: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: faq
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[faq].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - name: faq_categories
+    label: FAQ Categories
+    folder: cms/faq-categories
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: faq-categories
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[faq-categories].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - label: Theme Settings
+    name: settings
+    identifier_field: title
+    extension: json
+    create: false
+    delete: false
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    files:
+      - label: General
+        name: site
+        file: cms/_data/settings/site.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: General
+          - hint: Full domain url (needed for a correct sitemap file)
+            name: domain
+            label: Domain
+            widget: string
+            required: false
+          - name: favicon
+            label: Favicon
+            widget: image
+            allow_multiple: false
+            required: false
+          - name: apple_touch_icon
+            label: Apple Touch Icon
+            widget: image
+            allow_multiple: false
+            required: false
+          - name: header_additional_content
+            label: Additional Content Header
+            hint: Content here will be placed before </head> tag
+            widget: text
+            required: false
+          - name: footer_additional_content
+            label: Additional Content Footer
+            hint: Content here will be placed before </body> tag
+            widget: text
+            required: false
+          - name: images_optimization
+            label: Images Optimization
+            widget: object
+            collapsed: false
+            fields:
+              - label: Image Formats
+                name: formats
+                widget: select
+                multiple: true
+                options:
+                  - label: Avif
+                    value: avif
+                  - label: Webp
+                    value: webp
+              - label: Image Dimensions
+                name: dimensions
+                widget: select
+                multiple: true
+                options:
+                  - label: '500'
+                    value: 500
+                  - label: '800'
+                    value: 800
+                  - label: '1080'
+                    value: 1080
+                  - label: '1600'
+                    value: 1600
+                  - label: '2000'
+                    value: 2000
+                  - label: '2600'
+                    value: 2600
+      - label: Colors
+        name: colors
+        file: cms/_data/colors.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Colors
+      - label: Texts
+        name: texts
+        file: cms/_data/texts.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Texts
+          - hint: 'Original text: Home, key: 2268ff'
+            label: Text
+            name: 2268ff
+            widget: string
+          - hint: 'Original text: Wine, key: 292429'
+            label: Text
+            name: '292429'
+            widget: string
+          - hint: 'Original text: Liquor, key: -7852e9dc'
+            label: Text
+            name: '-7852e9dc'
+            widget: string
+          - hint: 'Original text: Beer, key: 1f8850'
+            label: Text
+            name: 1f8850
+            widget: string
+          - hint: 'Original text: Contact, key: -64104400'
+            label: Text
+            name: '-64104400'
+            widget: string
+          - hint: 'Original text: 336 Main St, key: 2b8639de'
+            label: Text
+            name: 2b8639de
+            widget: string
+          - hint: 'Original text: Lakeville, CT 06039, key: 34f5ff18'
+            label: Text
+            name: 34f5ff18
+            widget: string
+          - hint: 'Original text: 860-435-2600, key: -a7bf46a'
+            label: Text
+            name: '-a7bf46a'
+            widget: string
+          - hint: 'Original text: About Us, key: 645efc51'
+            label: Text
+            name: 645efc51
+            widget: string
+          - hint: 'Original text: Products, key: -37f9ca7c'
+            label: Text
+            name: '-37f9ca7c'
+            widget: string
+          - hint: 'Original text: CONTACT, key: 6382b000'
+            label: Text
+            name: 6382b000
+            widget: string
+          - hint: 'Original text: 336 Main st, Lakeville, CT 06039, key: 6c6d6226'
+            label: Text
+            name: 6c6d6226
+            widget: string
+          - hint: 'Original text: Welcome, key: -5347ccbe'
+            label: Text
+            name: '-5347ccbe'
+            widget: string
+          - hint: >-
+              Original text: The Destination for Wine & Spirits Enthusiasts,
+              key: 45154da8
+            label: Text
+            name: 45154da8
+            widget: string
+          - hint: >-
+              Original text: Welcome to Lakeville Wine & Spirits, combining a
+              vast selection of beverages with a friendly and knowledgeable
+              staff. We're not just a store - we're an experience., key:
+              6d7bc97d
+            label: Text
+            name: 6d7bc97d
+            widget: text
+          - hint: 'Original text: get to know us, key: -17a16148'
+            label: Text
+            name: '-17a16148'
+            widget: string
+          - hint: >-
+              Original text: Lakeville Wine & Spirits is a locally owned and
+              operated business, providing an extensive selection of wines,
+              beers, and spirits to Lakeville and surrounding communities. ,
+              key: -72e2dc36
+            label: Text
+            name: '-72e2dc36'
+            widget: text
+          - hint: >-
+              Original text: With our deep commitment to providing excellent
+              customer service and our passion for educating customers about the
+              products we offer, we aim to enhance your shopping experience.,
+              key: -3a8f4342
+            label: Text
+            name: '-3a8f4342'
+            widget: text
+          - hint: 'Original text: Our Products, key: -7a5fd008'
+            label: Text
+            name: '-7a5fd008'
+            widget: string
+          - hint: >-
+              Original text: If you have a preference for the finest wines, a
+              taste for craft beers, or a penchant for premium spirits, you've
+              come to the right place. At Lakeville Wine & Spirits, we pride
+              ourselves on our diverse product selection that caters to all
+              tastes and budgets., key: -3e5f39c3
+            label: Text
+            name: '-3e5f39c3'
+            widget: text
+          - hint: 'Original text: learn more, key: 367f27b1'
+            label: Text
+            name: 367f27b1
+            widget: string
+          - hint: "Original text: EXPLORE\_OUR\_SELECTIONS, key: -5e4e73d8"
+            label: Text
+            name: '-5e4e73d8'
+            widget: string
+          - hint: 'Original text: VIEW, key: 2832a5'
+            label: Text
+            name: 2832a5
+            widget: string
+          - hint: 'Original text: View details, key: 4d42a7e7'
+            label: Text
+            name: 4d42a7e7
+            widget: string
+          - hint: 'Original text: No items found., key: 3d503d2b'
+            label: Text
+            name: 3d503d2b
+            widget: string
+          - hint: 'Original text: Our Mission, key: 3dba0078'
+            label: Text
+            name: 3dba0078
+            widget: string
+          - hint: >-
+              Original text: At Lakeville Wine & Spirits, we believe in more
+              than just selling quality products. Our mission is to provide a
+              shopping experience that leaves you delighted and enlightened. ,
+              key: -60205128
+            label: Text
+            name: '-60205128'
+            widget: text
+          - hint: 'Original text: Visit us, key: 624d95b3'
+            label: Text
+            name: 624d95b3
+            widget: string
+          - hint: "Original text: © 2023 Lakeville Wine &\_Spirits. All rights reserved, key: 6ea8c068"
+            label: Text
+            name: 6ea8c068
+            widget: string
+          - hint: 'Original text: Protected Page, key: -11d4bbff'
+            label: Text
+            name: '-11d4bbff'
+            widget: string
+          - hint: >-
+              Original text: Incorrect password. Please try again., key:
+              -f5c4b5f
+            label: Text
+            name: '-f5c4b5f'
+            widget: string
+          - hint: 'Original text: Page Not Found, key: -40b0787c'
+            label: Text
+            name: '-40b0787c'
+            widget: string
+          - hint: >-
+              Original text: The page you are looking for doesn't exist or has
+              been moved., key: 583f3656
+            label: Text
+            name: 583f3656
+            widget: string
+          - hint: 'Original text: back to home, key: -7e7f8ad5'
+            label: Text
+            name: '-7e7f8ad5'
+            widget: string
+          - hint: >-
+              Original text: The Grand Standard offers peace and serenity to
+              working professionals who appreciate exceptional experiences and
+              service., key: 5599e894
+            label: Text
+            name: '5599e894'
+            widget: text
+          - hint: 'Original text: contact us, key: 8556e9e'
+            label: Text
+            name: 8556e9e
+            widget: string
+          - hint: 'Original text: Stay, key: 277a79'
+            label: Text
+            name: 277a79
+            widget: string
+          - hint: 'Original text: Stay with us, key: -18af9a6f'
+            label: Text
+            name: '-18af9a6f'
+            widget: string
+          - hint: 'Original text: Explore rooms, key: -4082a0f5'
+            label: Text
+            name: '-4082a0f5'
+            widget: string
+          - hint: 'Original text: enjoy amenities, key: -743dd63e'
+            label: Text
+            name: '-743dd63e'
+            widget: string
+          - hint: 'Original text: Dine, key: 20811c'
+            label: Text
+            name: 20811c
+            widget: string
+          - hint: 'Original text: dine with us, key: -29553aec'
+            label: Text
+            name: '-29553aec'
+            widget: string
+          - hint: 'Original text: enjoy a meal, key: -2ede44a9'
+            label: Text
+            name: '-2ede44a9'
+            widget: string
+          - hint: 'Original text: have a drink, key: -189f6a9f'
+            label: Text
+            name: '-189f6a9f'
+            widget: string
+          - hint: 'Original text: Live, key: 24250c'
+            label: Text
+            name: 24250c
+            widget: string
+          - hint: 'Original text: your best life, key: -2ec7f7f5'
+            label: Text
+            name: '-2ec7f7f5'
+            widget: string
+          - hint: 'Original text: new experiences, key: -10364637'
+            label: Text
+            name: '-10364637'
+            widget: string
+          - hint: 'Original text: upcoming events, key: -22ae7763'
+            label: Text
+            name: '-22ae7763'
+            widget: string
+          - hint: 'Original text: Learn, key: 45e5e24'
+            label: Text
+            name: 45e5e24
+            widget: string
+          - hint: 'Original text: learn about us, key: 7c0afa6d'
+            label: Text
+            name: 7c0afa6d
+            widget: string
+          - hint: 'Original text: Meet our team, key: -4513f1b6'
+            label: Text
+            name: '-4513f1b6'
+            widget: string
+          - hint: 'Original text: stay updated, key: 7ec719f4'
+            label: Text
+            name: 7ec719f4
+            widget: string
+          - hint: 'Original text: Keep Reading, key: -220bd30f'
+            label: Text
+            name: '-220bd30f'
+            widget: string
+          - hint: 'Original text: You may also like, key: b675cf4'
+            label: Text
+            name: b675cf4
+            widget: string
+          - hint: 'Original text: Explore our menu, key: -1ac69b40'
+            label: Text
+            name: '-1ac69b40'
+            widget: string
+          - hint: 'Original text: find out more, key: 1f58276e'
+            label: Text
+            name: 1f58276e
+            widget: string
+          - hint: 'Original text: Explore Our Restaurant, key: 717e761e'
+            label: Text
+            name: 717e761e
+            widget: string
+          - hint: 'Original text: View Directions, key: -5e440ed1'
+            label: Text
+            name: '-5e440ed1'
+            widget: string
+          - hint: 'Original text: Get tickets, key: -774bec03'
+            label: Text
+            name: '-774bec03'
+            widget: string
+          - hint: 'Original text: More Events, key: -2fd9d7bc'
+            label: Text
+            name: '-2fd9d7bc'
+            widget: string
+          - hint: 'Original text: View Image Gallery, key: -112ee0ce'
+            label: Text
+            name: '-112ee0ce'
+            widget: string
+          - hint: 'Original text: Book this Experience, key: -268a36cb'
+            label: Text
+            name: '-268a36cb'
+            widget: string
+          - hint: 'Original text: keep exploring, key: 4b9b2bb5'
+            label: Text
+            name: 4b9b2bb5
+            widget: string
+          - hint: 'Original text: Upcoming Events, key: 6b492c9d'
+            label: Text
+            name: 6b492c9d
+            widget: string
+          - hint: 'Original text: frequently asked question, key: 60c47413'
+            label: Text
+            name: 60c47413
+            widget: string
+          - hint: 'Original text: Related Questions, key: 2ec06758'
+            label: Text
+            name: 2ec06758
+            widget: string
+          - hint: 'Original text: questions, key: -6a3abeb3'
+            label: Text
+            name: '-6a3abeb3'
+            widget: string
+          - hint: 'Original text: Explore Our MENUS, key: 37935b73'
+            label: Text
+            name: 37935b73
+            widget: string
+          - hint: 'Original text: Frequently Asked Questions, key: -475b7d60'
+            label: Text
+            name: '-475b7d60'
+            widget: string
+          - hint: 'Original text: need more help?, key: 1b058a5d'
+            label: Text
+            name: 1b058a5d
+            widget: string
+          - hint: 'Original text: Contact Front Desk, key: 5aacee90'
+            label: Text
+            name: 5aacee90
+            widget: string
+          - hint: 'Original text: Sweet stuff, key: -7b66fb5c'
+            label: Text
+            name: '-7b66fb5c'
+            widget: string
+          - hint: 'Original text: Salt ''n'' Savory, key: 5f668058'
+            label: Text
+            name: 5f668058
+            widget: string
+          - hint: 'Original text: extras, key: -4cd5119d'
+            label: Text
+            name: '-4cd5119d'
+            widget: string
+          - hint: 'Original text: Starters, key: 525735e4'
+            label: Text
+            name: '525735e4'
+            widget: string
+          - hint: 'Original text: healthy bowls, key: 777348e'
+            label: Text
+            name: 777348e
+            widget: string
+          - hint: 'Original text: Sandwiches, key: 7f751349'
+            label: Text
+            name: 7f751349
+            widget: string
+          - hint: 'Original text: Extras, key: 7c8fda83'
+            label: Text
+            name: 7c8fda83
+            widget: string
+          - hint: 'Original text: Salads, key: -6cd44bce'
+            label: Text
+            name: '-6cd44bce'
+            widget: string
+          - hint: 'Original text: Entrées, key: 45cfcf0'
+            label: Text
+            name: 45cfcf0
+            widget: string
+          - hint: 'Original text: Desserts, key: 4166ce2d'
+            label: Text
+            name: 4166ce2d
+            widget: string
+          - hint: 'Original text: cocktails, key: -6cb6d331'
+            label: Text
+            name: '-6cb6d331'
+            widget: string
+          - hint: 'Original text: In your room, key: -3a2ffc73'
+            label: Text
+            name: '-3a2ffc73'
+            widget: string
+          - hint: 'Original text: Explore other Products, key: -607b561f'
+            label: Text
+            name: '-607b561f'
+            widget: string
+          - hint: 'Original text: Search Results, key: -1e418682'
+            label: Text
+            name: '-1e418682'
+            widget: string
+          - hint: "Original text: About Lakeville Wine &\_Spirits, key: 6a48c8e1"
+            label: Text
+            name: 6a48c8e1
+            widget: string
+          - hint: >-
+              Original text: Lakeville Wine & Spirits is a locally owned and
+              operated wine, beer, and spirits store located in the heart of
+              Lakeville, CT. , key: -42d9fed1
+            label: Text
+            name: '-42d9fed1'
+            widget: text
+          - hint: >-
+              Original text: We opened our doors with a simple mission: to
+              provide our community with a wide selection of beverages from
+              around the world, coupled with knowledgeable service in a friendly
+              atmosphere. Over the years, we've grown and evolved, but our
+              commitment to that mission has never wavered., key: 790eb8b7
+            label: Text
+            name: 790eb8b7
+            widget: text
+          - hint: 'Original text: Quality and Variety, key: 4389b51e'
+            label: Text
+            name: 4389b51e
+            widget: string
+          - hint: >-
+              Original text: We pride ourselves on our extensive selection,
+              curated to cater to all tastes and budgets. From globally
+              recognized brands to local craft beverages, our collection is as
+              diverse as the people we serve. We source our products carefully,
+              ensuring that we offer only the highest quality beverages to our
+              customers., key: 756b0b9a
+            label: Text
+            name: 756b0b9a
+            widget: text
+          - hint: 'Original text: Our Team, key: 290af1'
+            label: Text
+            name: 290af1
+            widget: string
+          - hint: >-
+              Original text: Our team is more than just staff; they're
+              passionate enthusiasts who love what they do. Each team member
+              brings a unique set of skills and knowledge to the table, creating
+              a collaborative environment that fosters learning and discovery.
+              They're always ready to assist, whether that's helping a customer
+              find their new favorite wine or recommending the perfect spirit
+              for a cocktail recipe., key: 53f2cc8a
+            label: Text
+            name: 53f2cc8a
+            widget: text
+          - hint: 'Original text: Community-Centric, key: 4da7e040'
+            label: Text
+            name: 4da7e040
+            widget: string
+          - hint: >-
+              Original text: At Lakeville Wine & Spirits, we're more than just a
+              store - we're a part of the community. We believe in supporting
+              local breweries and wineries, and we work to promote local
+              products whenever possible. We're also committed to giving back to
+              the community that supports us, participating in local events and
+              supporting local charities whenever we can., key: -2ccd8aa4
+            label: Text
+            name: '-2ccd8aa4'
+            widget: text
+          - hint: 'Original text: Visit Us, key: 624d91d3'
+            label: Text
+            name: 624d91d3
+            widget: string
+          - hint: >-
+              Original text: We invite you to visit our store at 336 Main St,
+              Lakeville, CT 06039, US to explore our selection and meet our
+              friendly team. Whether you're a seasoned connoisseur or new to the
+              world of wines and spirits, there's always something to discover
+              at Lakeville Wine & Spirits., key: 40300858
+            label: Text
+            name: '40300858'
+            widget: text
+          - hint: >-
+              Original text: For any inquiries or special requests, please
+              contact us at (860) 435-2600. We look forward to serving you.,
+              key: e454a45
+            label: Text
+            name: e454a45
+            widget: text
+          - hint: 'Original text: Our Selection, key: 6cfe578'
+            label: Text
+            name: 6cfe578
+            widget: string
+          - hint: "Original text: Beer, Wine &\_Liquor in Lakeville, CT, key: 770ff83c"
+            label: Text
+            name: 770ff83c
+            widget: string
+          - hint: 'Original text: Discover Something New, key: 6b9874e3'
+            label: Text
+            name: 6b9874e3
+            widget: string
+          - hint: >-
+              Original text: At Lakeville Wine & Spirits, we offer an extensive
+              selection of wines, beers, and spirits, handpicked from around the
+              globe. Our goal is to provide a diverse range of options that
+              cater to all tastes, occasions, and budgets., key: -49841845
+            label: Text
+            name: '-49841845'
+            widget: text
+          - hint: "Original text: Lakeville wine &\_Spirits, key: -4f9d3492"
+            label: Text
+            name: '-4f9d3492'
+            widget: string
+          - hint: 'Original text: Contact Us, key: 7f2746de'
+            label: Text
+            name: 7f2746de
+            widget: string
+          - hint: 'Original text: 336 Main St., key: 45410210'
+            label: Text
+            name: '45410210'
+            widget: string
+          - hint: 'Original text: hello@lakevillewineandspirits.com, key: 6b2c343c'
+            label: Text
+            name: 6b2c343c
+            widget: string
+          - hint: "Original text: Lakeville Wine &\_Spirits, key: 74a9978e"
+            label: Text
+            name: 74a9978e
+            widget: string
+          - hint: 'Original text: Store Hours:, key: 2593b6a'
+            label: Text
+            name: 2593b6a
+            widget: string
+          - hint: "Original text: Monday\_– 10:00 AM to 8:00 PM, key: -59babaf8"
+            label: Text
+            name: '-59babaf8'
+            widget: string
+          - hint: "Original text: Tuesday\_– 10:00 AM to 8:00 PM, key: -5ec6a1bb"
+            label: Text
+            name: '-5ec6a1bb'
+            widget: string
+          - hint: "Original text: Wednesday\_– 10:00 AM to 8:00 PM, key: -43c972"
+            label: Text
+            name: '-43c972'
+            widget: string
+          - hint: "Original text: Thursday\_– 10:00 AM to 8:00 PM, key: -2c29dae"
+            label: Text
+            name: '-2c29dae'
+            widget: string
+          - hint: "Original text: Friday\_– 10:00 AM to 9:00 PM, key: -17d720a8"
+            label: Text
+            name: '-17d720a8'
+            widget: string
+          - hint: "Original text: Saturday\_– 10:00 AM to 9:00 PM, key: -366f75ce"
+            label: Text
+            name: '-366f75ce'
+            widget: string
+          - hint: "Original text: Sunday\_– 11:00 AM to 5:00 PM, key: -370ef9dc"
+            label: Text
+            name: '-370ef9dc'
+            widget: string
+          - hint: 'Original text: Holiday Hours – 11:00 AM to 5:00 PM, key: -6b29a185'
+            label: Text
+            name: '-6b29a185'
+            widget: string
+      - label: Links
+        name: links
+        file: cms/_data/links.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Links
+          - hint: 'Original link: #, key: 23'
+            label: Link
+            name: '23'
+            widget: string
+          - hint: 'Original link: /, key: 2f'
+            label: Link
+            name: 2f
+            widget: string
+          - hint: 'Original link: /about-us, key: -66ead1f3'
+            label: Link
+            name: '-66ead1f3'
+            widget: string
+          - hint: 'Original link: /our-products, key: -367db38c'
+            label: Link
+            name: '-367db38c'
+            widget: string
+          - hint: 'Original link: /contact, key: 4b0e6111'
+            label: Link
+            name: 4b0e6111
+            widget: string
+          - hint: 'Original link: #about-us, key: -5a2005ff'
+            label: Link
+            name: '-5a2005ff'
+            widget: string
+          - hint: >-
+              Original link:
+              https://grandstandard.webflow.io/stay-with-us#rooms, key:
+              -25bccaf1
+            label: Link
+            name: '-25bccaf1'
+            widget: string
+          - hint: >-
+              Original link:
+              https://grandstandard.webflow.io/stay-with-us#amenities, key:
+              34864bae
+            label: Link
+            name: 34864bae
+            widget: string
+          - hint: >-
+              Original link:
+              https://grandstandard.webflow.io/dine-with-us#menus, key: 4d635e6e
+            label: Link
+            name: 4d635e6e
+            widget: string
+          - hint: >-
+              Original link: https://grandstandard.webflow.io/menu/drinks, key:
+              -7e065dde
+            label: Link
+            name: '-7e065dde'
+            widget: string
+          - hint: >-
+              Original link:
+              https://grandstandard.webflow.io/live-it-up#featured-experiences,
+              key: 4b498008
+            label: Link
+            name: 4b498008
+            widget: string
+          - hint: >-
+              Original link: https://grandstandard.webflow.io/live-it-up#events,
+              key: 7447a877
+            label: Link
+            name: 7447a877
+            widget: string
+          - hint: >-
+              Original link:
+              https://grandstandard.webflow.io/learn-about-us#team, key:
+              614e4cb0
+            label: Link
+            name: 614e4cb0
+            widget: string
+          - hint: >-
+              Original link:
+              https://grandstandard.webflow.io/learn-about-us#journal, key:
+              -6801dffc
+            label: Link
+            name: '-6801dffc'
+            widget: string
+          - hint: 'Original link: /hotel-amenities/restaurant, key: -13d76ae3'
+            label: Link
+            name: '-13d76ae3'
+            widget: string
+      - label: Images
+        name: images
+        file: cms/_data/images.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Images
+          - label: Image
+            name: 5c2f0f5c
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-118d5c88'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 1ceabbc1
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-6abacace'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 50fe1971
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-3492e923'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-3e147261'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-6733cbce'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-44a97794'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-4cf45baf'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '0'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 4a8dc094
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-5b15df44'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 7f9d2fa4
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-443bf8f1'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-4d0a397c'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-2eea9a83'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-61ac50b9'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-457fc39f'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: cee007c
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 365e83d9
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+publish_mode: editorial_workflow
