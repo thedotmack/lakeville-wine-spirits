@@ -113,7 +113,16 @@ collections:
             required: false
           - name: header_additional_content
             label: Additional Content Header
-            hint: Content here will be placed before </head> tag
+            hint: Content here will be placed before <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G22MX7G4KM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-G22MX7G4KM');
+</script>
+</head> tag
             widget: text
             required: false
           - name: footer_additional_content
